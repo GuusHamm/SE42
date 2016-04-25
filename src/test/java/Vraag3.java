@@ -1,6 +1,5 @@
 /**
  * Created by Nekkyou on 25-4-2016.
  */
-public class Vraag3
-{
+public class Vraag3 {
 }

@@ -1,6 +1,5 @@
 /**
  * Created by Nekkyou on 25-4-2016.
  */
-public class Vraag9
-{
+public class Vraag9 {
 }
