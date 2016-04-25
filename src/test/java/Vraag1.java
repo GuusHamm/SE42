@@ -41,6 +41,8 @@ public class Vraag1
             databaseCleaner.clean();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            em = emf.createEntityManager();
         }
     }
 
