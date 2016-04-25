@@ -2,10 +2,13 @@ import bank.domain.Account;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import util.DatabaseCleaner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import java.sql.SQLException;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -32,6 +35,13 @@ public class Vraag1
     public void setup() {
         emf = Persistence.createEntityManagerFactory("bankPU");
         em = emf.createEntityManager();
+
+        DatabaseCleaner databaseCleaner = new DatabaseCleaner(em);
+        try {
+            databaseCleaner.clean();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @After

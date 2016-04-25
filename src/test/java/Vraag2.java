@@ -29,7 +29,7 @@ public class Vraag2 {
 
 	@Before
 	public void setup() {
-		emf = Persistence.createEntityManagerFactory("BankPU");
+		emf = Persistence.createEntityManagerFactory("bankPU");
 		em = emf.createEntityManager();
 	}
 
