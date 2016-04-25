@@ -37,7 +37,6 @@ public interface AccountDAO {
 	List<Account> findAll();
 
 	/**
-	 * @param email
 	 * @return unique account instance with parameter email or null if such account doesn't exist
 	 */
 	Account findByAccountNr(Long accountNr);

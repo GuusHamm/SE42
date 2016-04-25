@@ -1,5 +1,4 @@
 import bank.domain.Account;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +30,7 @@ public class Vraag1
 
     @Before
     public void setup() {
-        emf = Persistence.createEntityManagerFactory("BankPU");
+        emf = Persistence.createEntityManagerFactory("bankPU");
         em = emf.createEntityManager();
     }
 
@@ -45,6 +44,7 @@ public class Vraag1
         Account account = new Account(111L);
         em.getTransaction().begin();
         em.persist(account);
+
         //TODO: verklaar en pas eventueel aan
         assertNull(account.getId());
         assertNull(account.getId());
