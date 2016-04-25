@@ -1,5 +1,6 @@
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import util.DatabaseCleaner;
 
 import javax.persistence.EntityManager;
@@ -43,5 +44,14 @@ public class Vraag9 {
 	@After
 	public void after() {
 
+	}
+
+	@Test
+	public void GenerationTypeTest() {
+		/*
+		Opgave 1 heb je uitgevoerd met @GeneratedValue(strategy = GenerationType.IDENTITY)
+		Voer dezelfde opdracht nu uit met GenerationType SEQUENCE en TABLE.
+		Verklaar zowel de verschillen in testresultaat als verschillen van de database structuur.
+		 */
 	}
 }

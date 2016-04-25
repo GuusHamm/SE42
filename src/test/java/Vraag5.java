@@ -1,5 +1,6 @@
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import util.DatabaseCleaner;
 
 import javax.persistence.EntityManager;
@@ -43,5 +44,15 @@ public class Vraag5 {
 	@After
 	public void after() {
 
+	}
+
+	@Test
+	public void refreshTest() {
+		/*
+		In de vorige opdracht verwijzen de objecten account en found naar dezelfde rij in de database.
+		Pas een van de objecten aan, persisteer naar de database.
+		Refresh vervolgens het andere object om de veranderde state uit de database te halen.
+		Test met asserties dat dit gelukt is.
+		 */
 	}
 }
