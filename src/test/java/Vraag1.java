@@ -20,7 +20,8 @@ public class Vraag1
 {
     /*
     Voor elke test moet je in ieder geval de volgende vragen beantwoorden:
-    Wat is de waarde van asserties en printstatements? Corrigeer verkeerde asserties zodat de test ‘groen’ wordt.
+        Wat is de waarde van asserties en printstatements?
+            Corrigeer verkeerde asserties zodat de test ‘groen’ wordt.
         Welke SQL statements worden gegenereerd?
         Wat is het eindresultaat in de database?
         Verklaring van bovenstaande drie observaties.
@@ -58,7 +59,6 @@ public class Vraag1
         em.persist(account);
 
         //TODO: verklaar en pas eventueel aan
-        assertNull(account.getId());
         assertNull(account.getId());
         em.getTransaction().commit();
         System.out.println("AccountId: " + account.getId());
