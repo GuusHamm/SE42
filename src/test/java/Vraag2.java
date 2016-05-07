@@ -1,3 +1,4 @@
+import bank.dao.AccountDAOJPAImpl;
 import bank.domain.Account;
 import org.junit.After;
 import org.junit.Before;
@@ -17,16 +18,6 @@ import static org.junit.Assert.assertTrue;
  * Created by Nekkyou on 25-4-2016.
  */
 public class Vraag2 {
-	/*
-    Voor elke test moet je in ieder geval de volgende vragen beantwoorden:
-        Wat is de waarde van asserties en printstatements?
-            Corrigeer verkeerde asserties zodat de test ‘groen’ wordt.
-        Welke SQL statements worden gegenereerd?
-        Wat is het eindresultaat in de database?
-        Verklaring van bovenstaande drie observaties.
-    De antwoorden op de vragen kun je als commentaar bij de testen vastleggen.
-     */
-
 	EntityManagerFactory emf;
 	EntityManager em;
 
@@ -51,13 +42,38 @@ public class Vraag2 {
 
 	}
 
+	/*
+    Voor elke test moet je in ieder geval de volgende vragen beantwoorden:
+        Wat is de waarde van asserties en printstatements?
+            Corrigeer verkeerde asserties zodat de test ‘groen’ wordt.
+        Welke SQL statements worden gegenereerd?
+        Wat is het eindresultaat in de database?
+        Verklaring van bovenstaande drie observaties.
+    De antwoorden op de vragen kun je als commentaar bij de testen vastleggen.
+     */
 	@Test
 	public void rollbackTest() {
 		Account account = new Account(111L);
 		em.getTransaction().begin();
 		em.persist(account);
+		//Het account is nog niet gecommit, dus er is nog geen ID
 		assertNull(account.getId());
 		em.getTransaction().rollback();
-		// TODO code om te testen dat table account geen records bevat. Hint: bestudeer/gebruik AccountDAOJPAImpl
+
+		AccountDAOJPAImpl accountDAOJPA = new AccountDAOJPAImpl(em);
+		//Omdat je wilt weten of de tabel geen records heeft, haal ik alles op en kijk of die lijst leeg is
+		assertTrue(accountDAOJPA.findAll().isEmpty());
+
+		//2.	Welke SQL statements worden gegenereerd?
+		//      Er wordt een rollback gedaan.
+
+		//3.	Wat is het eindresultaat in de database?
+		//      Account is helemaal leeg
+
+		//4.	Verklaring van bovenstaande drie observaties.
+		//      Aangezien hier rollback wordt gedaan, worden alle items in de transactie weggegooid.
+		//		Er wordt niks gecommit dus daarom is account ook gewoon helemaal leeg.
+
+
 	}
 }

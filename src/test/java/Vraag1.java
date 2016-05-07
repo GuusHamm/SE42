@@ -58,13 +58,11 @@ public class Vraag1
         em.getTransaction().begin();
         em.persist(account);
 
-        //TODO: verklaar en pas eventueel aan
         //Voordat de transactie gecommit is, wordt er nog geen id aangemaakt. Wat wel aangemaakt is in een account nummer.
         //De id is puur voor de database.
         assertNull(account.getId());
         em.getTransaction().commit();
         System.out.println("AccountId: " + account.getId());
-        //TODO: verklaar en pas eventueel aan
         //Nadat em.getTransaction().commit() is aangeroepen zet hij de data van de transactie in de database en maakt er ook een id voor, Daarom is id niet meer null
         assertTrue(account.getId() > 0L);
 
