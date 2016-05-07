@@ -59,11 +59,24 @@ public class Vraag1
         em.persist(account);
 
         //TODO: verklaar en pas eventueel aan
+        //Voordat de transactie gecommit is, wordt er nog geen id aangemaakt. Wat wel aangemaakt is in een account nummer.
+        //De id is puur voor de database.
         assertNull(account.getId());
         em.getTransaction().commit();
         System.out.println("AccountId: " + account.getId());
         //TODO: verklaar en pas eventueel aan
+        //Nadat em.getTransaction().commit() is aangeroepen zet hij de data van de transactie in de database en maakt er ook een id voor, Daarom is id niet meer null
         assertTrue(account.getId() > 0L);
+
+        //2.	Welke SQL statements worden gegenereerd?
+        //      Er wordt een create table account gemaakt en een insert in het account
+
+        //3.	Wat is het eindresultaat in de database?
+        //      1 Account in de database met id : 7, account nummer 111 en balance en threshold 0.
+
+        //4.	Verklaring van bovenstaande drie observaties.
+        //      Het ID wordt pas aangemaakt bij het committen, waardoor hij bij de eerste assertie null was, en bij de 2de niet meer.
+        //      Na de commit is het account ook in de database gezet met de waardes.
     }
 
 }
