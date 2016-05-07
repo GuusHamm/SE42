@@ -66,6 +66,7 @@ public class Vraag2 {
 
 		//2.	Welke SQL statements worden gegenereerd?
 		//      Er wordt een rollback gedaan.
+		//		SELECT ID, ACCOUNTNR, BALANCE, THRESHOLD FROM ACCOUNT : Om alle Accounts op te halen van de database
 
 		//3.	Wat is het eindresultaat in de database?
 		//      Account is helemaal leeg
