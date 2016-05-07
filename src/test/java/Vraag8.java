@@ -64,6 +64,18 @@ public class Vraag8 {
 		assertEquals(id, acc1.getId());
 		Account accFound = em.find(Account.class, id);
 		assertNull(accFound);
-	//TODO: verklaar bovenstaande asserts
+//		De eerste assert is een assert waarbij we een in memory versie van Account veglijken met de id die we hebben verkregen voordat we de account hebben weg gegeooid.
+//		de tweede assert controleert dat het object ook echt verwijderd is uit de database.
+
+//		2.	Welke SQL statements worden gegenereerd?
+//      INSERT INTO ACCOUNT (ACCOUNTNR, BALANCE, THRESHOLD) VALUES (?, ?, ?);
+//		select lastval();
+
+// 		3.	Wat is het eindresultaat in de database?
+//      1 Account in de database met account nummer 88, balance 0 & threshold 0.
+
+// 		4.	Verklaring van bovenstaande drie observaties.
+//		De account is weliswaar verwijderd uit de EntityManager in de database blijk deze echter nog wel bestaan,
+//		het object lijkt dus verwijderd te zijn maar dit is in werkelijkheid niet zo.
 	}
 }
