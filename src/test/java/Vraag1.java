@@ -68,6 +68,7 @@ public class Vraag1
 
         //2.	Welke SQL statements worden gegenereerd?
         //      Er wordt een create table account gemaakt en een insert in het account
+        //      INSERT INTO ACCOUNT (ACCOUNTNR, BALANCE, THRESHOLD) VALUES (?, ?, ?)
 
         //3.	Wat is het eindresultaat in de database?
         //      1 Account in de database met id : 7, account nummer 111 en balance en threshold 0.
