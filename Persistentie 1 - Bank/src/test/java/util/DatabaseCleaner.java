@@ -1,6 +1,8 @@
 package util;
 
 import bank.domain.Account;
+import bank.domain.AccountVoorVraag9;
+import bank.domain.AccountVoorVraag9Table;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.EntityType;
@@ -9,7 +11,9 @@ import java.sql.SQLException;
 public class DatabaseCleaner {
 
 	private static final Class<?>[] ENTITY_TYPES = {
-			Account.class
+			Account.class,
+			AccountVoorVraag9.class,
+			AccountVoorVraag9Table.class
 	};
 	private final EntityManager em;
 
