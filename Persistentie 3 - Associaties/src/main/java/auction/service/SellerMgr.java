@@ -5,10 +5,6 @@ import auction.domain.Category;
 import auction.domain.Item;
 import auction.domain.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 public class SellerMgr {
 
     private ItemDOAJPAImpl itemDOAJPA;

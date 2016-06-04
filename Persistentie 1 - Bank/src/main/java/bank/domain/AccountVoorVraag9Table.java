@@ -1,5 +1,6 @@
 package bank.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -8,20 +9,20 @@ import java.io.Serializable;
 		@NamedQuery(name = "Account.count", query = "select count(a) from Account as a"),
 		@NamedQuery(name = "Account.findByAccountNr", query = "select a from Account as a where a.accountNr = :accountNr")
 })
-public class Account implements Serializable {
+public class AccountVoorVraag9Table implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long Id;
 	@Column(unique = true)
 	private Long accountNr;
 	private Long balance;
 	private Long threshold;
 
-	public Account() {
+	public AccountVoorVraag9Table() {
 	}
 
-	public Account(Long accountNr) {
+	public AccountVoorVraag9Table(Long accountNr) {
 		balance = 0L;
 		threshold = 0L;
 		this.accountNr = accountNr;

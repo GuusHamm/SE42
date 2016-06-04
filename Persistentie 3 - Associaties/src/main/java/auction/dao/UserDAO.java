@@ -1,6 +1,7 @@
 package auction.dao;
 
 import auction.domain.User;
+
 import java.util.List;
 
 public interface UserDAO {

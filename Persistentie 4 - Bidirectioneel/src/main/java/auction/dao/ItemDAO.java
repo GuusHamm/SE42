@@ -1,6 +1,7 @@
 package auction.dao;
 
 import auction.domain.Item;
+
 import java.util.List;
 
 public interface ItemDAO {

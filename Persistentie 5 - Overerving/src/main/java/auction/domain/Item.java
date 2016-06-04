@@ -2,8 +2,6 @@ package auction.domain;
 
 import nl.fontys.util.Money;
 
-import javax.persistence.*;
-
 @Entity
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({

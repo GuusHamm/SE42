@@ -1,6 +1,5 @@
 package auction.domain;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

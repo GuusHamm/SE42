@@ -1,10 +1,11 @@
 package auction.dao;
 
 import auction.domain.User;
+
+import javax.persistence.EntityExistsException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javax.persistence.EntityExistsException;
 
 public class UserDAOCollectionImpl implements UserDAO {
 

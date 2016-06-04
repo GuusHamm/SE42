@@ -1,23 +1,18 @@
 package auction.service;
 
-import static org.junit.Assert.*;
-
+import auction.domain.Category;
+import auction.domain.Item;
+import auction.domain.User;
 import auction.service.util.DatabaseCleaner;
 import nl.fontys.util.Money;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
-import auction.domain.Category;
-import auction.domain.Item;
-import auction.domain.User;
-
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class SellerMgrTest {
 
