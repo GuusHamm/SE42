@@ -2,6 +2,8 @@ package auction.domain;
 
 import nl.fontys.util.Money;
 
+import javax.persistence.*;
+
 @Entity
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
@@ -29,7 +31,7 @@ public abstract class Item implements Comparable {
 					column = @Column(name = "c_description"))
 	})
 	@OneToOne(cascade = CascadeType.PERSIST)
-	private Category category;
+	private Category category;x
 
 	private String description;
 	@OneToOne(cascade = CascadeType.PERSIST, mappedBy = "bettedOnItem")
