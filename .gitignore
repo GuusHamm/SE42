@@ -17,3 +17,5 @@ hs_err_pid*
 /Persistentie 1 - Bank/target/
 /Encryption/.idea/
 /Web Service/.idea/
+/Encryption/id_rsa.pub
+/Encryption/id_rsa
