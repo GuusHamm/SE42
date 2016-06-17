@@ -19,32 +19,11 @@ public class WriteReadFiles {
 
 	}
 
-	public void writeKeysToFile(KeyPair keyPair) {
-		try {
-			fos = new FileOutputStream("private.key");
-			out = new ObjectOutputStream(fos);
-
-			out.writeObject(keyPair.getPrivate());
-
-
-			fos = new FileOutputStream("public.key");
-			out = new ObjectOutputStream(fos);
-
-			out.writeObject(keyPair.getPublic());
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-
 	public PublicKey getPublicKey() {
 		PublicKey key = null;
 
 		try {
-			fis = new FileInputStream("public.key");
+			fis = new FileInputStream("id_rsa.pub");
 			ois = new ObjectInputStream(fis);
 
 			key = (PublicKey) ois.readObject();
@@ -64,7 +43,7 @@ public class WriteReadFiles {
 		PrivateKey key = null;
 
 		try {
-			fis = new FileInputStream("private.key");
+			fis = new FileInputStream("id_rsa");
 			ois = new ObjectInputStream(fis);
 
 			key = (PrivateKey) ois.readObject();
