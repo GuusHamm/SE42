@@ -1,7 +1,11 @@
 package com.gmail.guushamm;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.*;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Created by guushamm on 17/06/16.
@@ -10,10 +14,9 @@ public class Sign {
 	public static void main(String[] args) {
 		System.out.println("Choose your file [INPUT.ext]");
 
-		WriteReadFiles writeReadFiles = new WriteReadFiles();
-		PrivateKey privateKey = writeReadFiles.getPrivateKey();
+		PrivateKey privateKey = GenerateKeys.getPrivateKey();
 
-		String inputText = writeReadFiles.getInputFile();
+		String inputText = getInputFile();
 
 		try {
 			Signature signature = Signature.getInstance("SHA1withRSA");
@@ -39,16 +42,20 @@ public class Sign {
 			objectOutputStream.writeObject(inputText);
 			objectOutputStream.close();
 
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		} catch (InvalidKeyException e) {
-			e.printStackTrace();
-		} catch (SignatureException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException | IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println();
 
+	}
+
+	public static String getInputFile() {
+		String input = "";
+		try {
+			input = new String(Files.readAllBytes(Paths.get("INPUT.ext")), UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return input;
 	}
 }
