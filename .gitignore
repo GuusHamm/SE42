@@ -19,3 +19,7 @@ hs_err_pid*
 /Web Service/.idea/
 /Encryption/id_rsa.pub
 /Encryption/id_rsa
+/Encryption 1 - Signature/.idea/
+/Encryption 1 - Signature/target/
+/Encryption 2 - Passwords/target/
+/Encryption 2 - Passwords/.idea/
