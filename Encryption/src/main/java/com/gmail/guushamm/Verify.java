@@ -34,8 +34,11 @@ public class Verify {
 			e.printStackTrace();
 		}
 
-		System.out.println(fileIsValid);
-
+		if (fileIsValid){
+			System.out.println("That signature on this file is valid");
+		}else{
+			System.out.println("Woooow watch out with that file, the signature does not seem to be valid");
+		}
 	}
 }
 
