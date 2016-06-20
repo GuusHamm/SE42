@@ -4,11 +4,11 @@
 <xsd:import namespace="http://webservice.auction/" schemaLocation="http://127.0.0.1:8080/auction?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-<message name="getItem">
-<part name="parameters" element="tns:getItem"></part>
+<message name="findItemByDescription">
+<part name="parameters" element="tns:findItemByDescription"></part>
 </message>
-<message name="getItemResponse">
-<part name="parameters" element="tns:getItemResponse"></part>
+<message name="findItemByDescriptionResponse">
+<part name="parameters" element="tns:findItemByDescriptionResponse"></part>
 </message>
 <message name="offerItem">
 <part name="parameters" element="tns:offerItem"></part>
@@ -40,16 +40,16 @@
 <message name="newBidResponse">
 <part name="parameters" element="tns:newBidResponse"></part>
 </message>
-<message name="findItemByDescription">
-<part name="parameters" element="tns:findItemByDescription"></part>
+<message name="getItem">
+<part name="parameters" element="tns:getItem"></part>
 </message>
-<message name="findItemByDescriptionResponse">
-<part name="parameters" element="tns:findItemByDescriptionResponse"></part>
+<message name="getItemResponse">
+<part name="parameters" element="tns:getItemResponse"></part>
 </message>
 <portType name="Auction">
-<operation name="getItem">
-<input wsam:Action="http://webservice.auction/Auction/getItemRequest" message="tns:getItem"></input>
-<output wsam:Action="http://webservice.auction/Auction/getItemResponse" message="tns:getItemResponse"></output>
+<operation name="findItemByDescription">
+<input wsam:Action="http://webservice.auction/Auction/findItemByDescriptionRequest" message="tns:findItemByDescription"></input>
+<output wsam:Action="http://webservice.auction/Auction/findItemByDescriptionResponse" message="tns:findItemByDescriptionResponse"></output>
 </operation>
 <operation name="offerItem">
 <input wsam:Action="http://webservice.auction/Auction/offerItemRequest" message="tns:offerItem"></input>
@@ -71,14 +71,14 @@
 <input wsam:Action="http://webservice.auction/Auction/newBidRequest" message="tns:newBid"></input>
 <output wsam:Action="http://webservice.auction/Auction/newBidResponse" message="tns:newBidResponse"></output>
 </operation>
-<operation name="findItemByDescription">
-<input wsam:Action="http://webservice.auction/Auction/findItemByDescriptionRequest" message="tns:findItemByDescription"></input>
-<output wsam:Action="http://webservice.auction/Auction/findItemByDescriptionResponse" message="tns:findItemByDescriptionResponse"></output>
+<operation name="getItem">
+<input wsam:Action="http://webservice.auction/Auction/getItemRequest" message="tns:getItem"></input>
+<output wsam:Action="http://webservice.auction/Auction/getItemResponse" message="tns:getItemResponse"></output>
 </operation>
 </portType>
 <binding name="AuctionPortBinding" type="tns:Auction">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="getItem">
+<operation name="findItemByDescription">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -132,7 +132,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="findItemByDescription">
+<operation name="getItem">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

@@ -73,6 +73,7 @@ public class Item implements Comparable {
 		}
 
         highest = new Bid(buyer, amount);
+		this.highest = highest;
         return highest;
     }
 

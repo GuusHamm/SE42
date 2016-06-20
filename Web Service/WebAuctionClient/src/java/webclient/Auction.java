@@ -1,6 +1,7 @@
 
 package webclient;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -9,7 +10,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
-import java.util.List;
 
 
 /**
@@ -29,16 +29,16 @@ public interface Auction {
      * 
      * @param arg0
      * @return
-     *     returns webclient.Item
+     *     returns java.util.List<webclient.Item>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getItem", targetNamespace = "http://webservice.auction/", className = "webclient.GetItem")
-    @ResponseWrapper(localName = "getItemResponse", targetNamespace = "http://webservice.auction/", className = "webclient.GetItemResponse")
-    @Action(input = "http://webservice.auction/Auction/getItemRequest", output = "http://webservice.auction/Auction/getItemResponse")
-    public Item getItem(
+    @RequestWrapper(localName = "findItemByDescription", targetNamespace = "http://webservice.auction/", className = "webclient.FindItemByDescription")
+    @ResponseWrapper(localName = "findItemByDescriptionResponse", targetNamespace = "http://webservice.auction/", className = "webclient.FindItemByDescriptionResponse")
+    @Action(input = "http://webservice.auction/Auction/findItemByDescriptionRequest", output = "http://webservice.auction/Auction/findItemByDescriptionResponse")
+    public List<Item> findItemByDescription(
         @WebParam(name = "arg0", targetNamespace = "")
-        Long arg0);
+        String arg0);
 
     /**
      * 
@@ -134,15 +134,15 @@ public interface Auction {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<webclient.Item>
+     *     returns webclient.Item
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findItemByDescription", targetNamespace = "http://webservice.auction/", className = "webclient.FindItemByDescription")
-    @ResponseWrapper(localName = "findItemByDescriptionResponse", targetNamespace = "http://webservice.auction/", className = "webclient.FindItemByDescriptionResponse")
-    @Action(input = "http://webservice.auction/Auction/findItemByDescriptionRequest", output = "http://webservice.auction/Auction/findItemByDescriptionResponse")
-    public List<Item> findItemByDescription(
+    @RequestWrapper(localName = "getItem", targetNamespace = "http://webservice.auction/", className = "webclient.GetItem")
+    @ResponseWrapper(localName = "getItemResponse", targetNamespace = "http://webservice.auction/", className = "webclient.GetItemResponse")
+    @Action(input = "http://webservice.auction/Auction/getItemRequest", output = "http://webservice.auction/Auction/getItemResponse")
+    public Item getItem(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Long arg0);
 
 }

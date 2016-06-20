@@ -11,8 +11,8 @@ import java.sql.SQLException;
 public class DatabaseCleaner {
 
 	private static final Class<?>[] ENTITY_TYPES = {
-			Bid.class,
 			Item.class,
+			Bid.class,
 			User.class
 
 	};

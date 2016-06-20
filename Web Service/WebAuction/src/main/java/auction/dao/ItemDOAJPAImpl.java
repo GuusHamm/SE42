@@ -15,7 +15,7 @@ public class ItemDOAJPAImpl implements ItemDAO{
 	private final EntityManager entityManager;
 
 	public ItemDOAJPAImpl() {
-		this.entityManager = Persistence.createEntityManagerFactory("auctionPU").createEntityManager();
+			this.entityManager = Persistence.createEntityManagerFactory("auctionPU").createEntityManager();
 	}
 
 	@Override
