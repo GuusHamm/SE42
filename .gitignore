@@ -15,11 +15,15 @@
 hs_err_pid*
 
 /Persistentie 1 - Bank/target/
-/Encryption/.idea/
 /Web Service/.idea/
-/Encryption/id_rsa.pub
-/Encryption/id_rsa
 /Encryption 1 - Signature/.idea/
 /Encryption 1 - Signature/target/
 /Encryption 2 - Passwords/target/
 /Encryption 2 - Passwords/.idea/
+/Persistentie 1 - Bank/.idea/
+/Encryption 1 - Signature/INPUT(SignedByGuusHamm)
+/Encryption 1 - Signature/id_rsa
+/Encryption 1 - Signature/id_rsa.pub
+/Encryption 1 - Signature/INPUT.ext
+/Web Service/WebAuctionClient/.idea/
+/Web Service/WebAuctionClient/target/

@@ -1,5 +1,6 @@
 package bank.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

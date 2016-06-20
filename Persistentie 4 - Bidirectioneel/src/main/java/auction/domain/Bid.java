@@ -1,6 +1,5 @@
 package auction.domain;
 
-import com.sun.istack.internal.NotNull;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
 
@@ -23,7 +22,6 @@ public class Bid {
 
 
 	@OneToOne
-	@NotNull
 	private Item bettedOnItem;
 
 	public Bid() {

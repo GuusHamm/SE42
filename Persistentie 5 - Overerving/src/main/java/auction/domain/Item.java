@@ -31,7 +31,7 @@ public abstract class Item implements Comparable {
 					column = @Column(name = "c_description"))
 	})
 	@OneToOne(cascade = CascadeType.PERSIST)
-	private Category category;x
+	private Category category;
 
 	private String description;
 	@OneToOne(cascade = CascadeType.PERSIST, mappedBy = "bettedOnItem")

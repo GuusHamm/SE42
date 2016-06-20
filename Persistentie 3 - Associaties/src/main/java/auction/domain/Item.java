@@ -2,6 +2,8 @@ package auction.domain;
 
 import nl.fontys.util.Money;
 
+import javax.persistence.*;
+
 @Entity
 @NamedQueries({
         @NamedQuery(name="Item.count", query = "select count(i) from Item as i"),
